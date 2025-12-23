@@ -32,8 +32,27 @@
     </h1>
     <p class="text-gray-700 mb-2">You Search For :</p>
     <h2 id="cityName" class="text-xl font-semibold text-sky-600 mb-4"></h2>
-    <div id="loading" class="mt-4 text-gray-500" >Loading City Info....</div>
-    <div id="cityInfo" class=""></div>
+    <div id="loading" class=" mt-4 text-gray-500" >Loading City Info....</div>
+    <div id="cityInfo" class=" hidden mt-4 bg-gray-50 p-4 rounded-lg shadow-inner space-y-3 text-gray-700">
+       <div class="flex justify-between">
+        <span class="font-semibold">Latitude:</span>
+        <span id="lat"></span>
+
+        <span class="font-semibold">Longitude:</span>
+        <span id="lon"></span>
+       </div>
+       <div class="flex justify-between">
+        <span class="font-semibold">Country:</span>
+        <span id="country"></span>
+        <span class="font-semibold">State:</span>
+        <span id="state"></span>
+       </div>
+       <div class="flex justify-between">
+          <span class="font-semibold">Population:</span>
+          <span id="population"></span>
+       </div>
+      </div>
+     <p id="error" class=" hidden text-red-500 mt-2 font-semibold">City Not Found....</p>
 </div>
       </div>
 
