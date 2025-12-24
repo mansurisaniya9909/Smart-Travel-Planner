@@ -23,3 +23,30 @@
             </div>
         </div>
      </nav>
+
+     <!-- weather card -->
+
+     <div class="flex justify-center mt-20 px-4">
+       <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md text-center">
+        <h1 class="text-2xl font-bold text-sky-600 mb-1" >Weather Report</h1>
+        <h2 id="cityName" class="text-lg text-gray-600 font-semibold mb-6"></h2>
+
+        <!-- Loading -->
+
+        <div id="loading " class="text-gray-500 animate-pulse">
+           Fetching Weather Data....
+        </div>
+
+        <!-- Weather Data -->
+         <div></div>
+
+         <!-- Error -->
+          <p id="error" class="hidden text-red-600 mt-4 font-semibold">
+            ❌ Weather Data Not Found
+          </p>
+       </div>
+     </div>
+     
+        <script src="./JS/weather.js"></script>
+     </body>
+     </html>
