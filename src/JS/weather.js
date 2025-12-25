@@ -5,6 +5,15 @@ const cityName = document.querySelector("#cityName");
 const loading = document.querySelector("#loading");
 const errorBox = document.querySelector("#error");
 
+const weatherBox = document.querySelector("#weatherBox");
+const temp = document.querySelector("#temp");
+const feelsLike = document.querySelector("#feels");
+const condition = document.querySelector("#desc");
+const humidity = document.querySelector("#humidity");
+const windSpeed = document.querySelector("#wind");
+
+
+
 let API_KEY = "bd1a9c62c57a999fdf90e514baaac1ee";
 
 if(!city){
@@ -28,6 +37,25 @@ if(!city){
 
       let{lat,lon} = geoData[0];
       console.log(lat,lon);
+
+      const WeatherRes = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
+      );
+      console.log(WeatherRes);
+
+      if(!WeatherRes.ok)throw new Error("Weather API failed");
+
+      const weatherData = await WeatherRes.json();
+      console.log(weatherData);
+
+      temp.textContent=weatherData.main.temp;
+      feelsLike.textContent=weatherData.main.feels_like;
+      condition.textContent=weatherData.weather[0].description;
+      humidity.textContent=weatherData.main.humidity;
+      windSpeed.textContent=weatherData.wind.speed;
+      
+      loading.classList.add("hidden");
+      weatherBox.classList.remove("hidden");
       
       
       

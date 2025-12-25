@@ -33,12 +33,44 @@
 
         <!-- Loading -->
 
-        <div id="loading " class="text-gray-500 animate-pulse">
+        <div id="loading" class="text-gray-500 animate-pulse">
            Fetching Weather Data....
         </div>
 
         <!-- Weather Data -->
-         <div></div>
+         <div id="weatherBox" class="mt-6 bg-sky-50 rounded-xl p-5 space-y-4 text-gray-700 hidden">
+            <div class="flex justify-between">
+              <span class="font-semibold">🌡️ Temerature:</span>
+              <span><span id="temp"></span>°C</span>
+
+            </div>
+
+             <div class="flex justify-between">
+              <span class="font-semibold">🤗 Feels like:</span>
+              <span><span id="feels"></span>°C</span>
+
+            </div>
+
+             <div class="flex justify-between">
+              <span class="font-semibold">☁️ Condition:</span>
+              <span id="desc" class="capitalize"></span>
+
+
+
+            </div>
+
+             <div class="flex justify-between">
+              <span class="font-semibold">💧 Humidity:</span>
+              <span><span id="humidity"></span>%</span>
+
+            </div>
+
+             <div class="flex justify-between">
+              <span class="font-semibold">🎐 Wind Speed:</span>
+              <span><span id="wind"></span>m/s</span>
+
+            </div>
+         </div>
 
          <!-- Error -->
           <p id="error" class="hidden text-red-600 mt-4 font-semibold">
